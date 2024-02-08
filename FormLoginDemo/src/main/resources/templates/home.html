@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{./css/styles.css}">
+    <link th:href='@{https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css}' rel='stylesheet'>
+    <link rel="stylesheet" th:href="@{./css/reset.css}">
+</head>
+<body> 
+
+    <style>
+
+        body{
+            background: url(./picture/nen.png) no-repeat center;
+        }
+
+    </style>
+
+    <div class="profile-card">
+        <figure class="profile-card_img">
+            <img src="./picture/avata.png" alt="...">
+        </figure>
+
+        <div class="profile-card_desc">
+            <h1>Nguyen Quy Than</h1>
+            <div>Back-end Developer</div>
+            <div style="display: flex; align-items: center; gap: 10px; justify-content: center;">
+                <i class='bx bx-map'></i>
+                <span>ABC, New York</span>
+            </div>
+        </div>
+
+        <div class="profile-card_info">
+            <div>
+                <div>850</div>
+                <div>Followers</div>
+            </div>
+            <div>
+                <div>50</div>
+                <div>References</div>
+            </div>
+            <div>
+                <div>105</div>
+                <div>Works</div>
+            </div>
+        </div>
+    
+        <div class="profile-card_social">
+            <a th:href="@{https://www.facebook.com/nguyenquy.than.3/}" target="_blank" class="facebook"><i class='bx bxl-facebook' ></i></a>
+            <a th:href="@{#}" class="twitter"><i class='bx bxl-twitter' ></i></a>
+            <a th:href="@{https://www.instagram.com/_thando_02/}" target="_blank" class="instagram"><i class='bx bxl-instagram-alt' ></i></a>
+            <a th:href="@{https://www.youtube.com/channel/UCF66fHT4NZSsLRc3YHfsKFg}" target="_blank" class="youtube"><i class='bx bxl-youtube' ></i></a>
+            <a th:href="@{https://github.com/HumanCodea}" target="_blank" class="github"><i class='bx bxl-github' ></i></a>
+        </div>
+    
+        <div class="profile-card_actions">
+            <button class="blue">Send Message</button>
+            <button class="orange">Follow Me</button>
+        </div>
+
+        <div>Welcome <span sec:authentication="principal.username"></span>
+            <a ces:authorize="isAuthenticated()" th:href="@{/logout}">Sign out</a>
+        </div>
+    </div>
+    
+</body>
+</html>

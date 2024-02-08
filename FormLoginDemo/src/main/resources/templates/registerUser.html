@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{./css/style.css}">
+    <link th:href='@{https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css}' rel='stylesheet'>
+    <title>Register User</title>
+</head>
+<body>
+    <div class="login-card-container">
+        <div class="login-card">
+            <div th:if="${param.successfully}">
+                <div class="alert alert-info"> You've registed successfully!</div>
+              </div>
+            <div class="login-card-logo">
+                <img src="./picture/logo.png" alt="logo">
+            </div>
+            <div class="login-card-header">
+                <h1>Register Here</h1>
+                <div>Please register to sign in</div>
+            </div>
+                <form class="login-card-form" th:action="@{/save}" method="post">
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded"><i class='bx bx-envelope'></i></span>
+                        <input type="text" placeholder="Enter Email" name="username" required autofocus>
+                    </div>
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded"><i class='bx bx-lock-alt' ></i></span>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                    </div>
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded"><i class='bx bx-lock-alt' ></i></span>
+                        <input type="text" placeholder="Enter Roles" name="roles" required>
+                    </div>
+                    <button type="submit">Register</button>
+                </form>
+                <div class="login-card-footer">
+                    Do you have an account? <a th:href="@{/login}">Sign in here</a>
+                </div>
+            </div>
+            <div class="login-card-social">
+                <div>Other Sign-in Platform</div>
+                <div class="login-card-social-btns">
+                    <a th:href="@{#}">
+                        <i class='bx bxl-facebook-circle' ></i>
+                    </a>
+                    <a th:href="@{#}">
+                        <i class='bx bxl-google' ></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
